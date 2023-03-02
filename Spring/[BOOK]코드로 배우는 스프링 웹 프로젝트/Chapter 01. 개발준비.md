@@ -11,16 +11,18 @@ Chapter 01. 개발준비
 
 >## 2. Java Configuration
 - Spring Legacy Project의 경우 xml기반으로 스프링 관련 설정을 하도록 되어있다. 그러나 Spring 3 버전 이후에는 Java클래스 파일을 이용하는 설정을 지원하면서 점차 xml이 아닌 Java 설정을 이용하는 경우가 증가하고 있다.
-- Java 설정을 하는 방법은 우선 web.xml을 삭제하고 spring 폴더 내에 있는 xml파일들도 전부 다 삭제한다.
+- Java 설정을 하는 방법은 우선 web.xml을 삭제하고 spring 폴더 내에 있는 xml파일들도 전부 다 삭제한다. (전 / 후)
     <center>
         <table>
             <tbody>
                 <tr>
                     <td>
-                        <img src="./image/ch01_1.png" width="150" height="200"/>
+                        <span>(전)</span>
+                        <img src="./image/ch01_1.png" width="300" height="500"/>
                     </td>
                     <td>
-                        <img src="./image/ch01_2.png" width="150" height="200"/>
+                        <span>(후)</span>
+                        <img src="./image/ch01_2.png" width="300" height="500"/>
                     </td>
                 </tr>
             </tbody>
