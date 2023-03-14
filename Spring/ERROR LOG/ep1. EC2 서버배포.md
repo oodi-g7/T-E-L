@@ -1,4 +1,4 @@
-ERROR LOG_1. EC2 서버배포
+ep1. EC2 서버배포
 =
 
 >## 1. 상황
@@ -13,7 +13,7 @@ ERROR LOG_1. EC2 서버배포
 8. 해당 디렉토리에 있던 war파일을 tomcat으로 이동 : sudo mv search-1.0.0-BUILD-SNAPSHOT.war /usr/local/apache-tomcat-8.5.76/webapps/
 9. webapps/로 이동 : cd /usr/local/apache-tomcat-8.5.76/webapps/
 10. war파일 이름 search로 변경하기 : mv search-1.0.0-BUILD-SNAPSHOT.war search.war
-(tomcat의 server.xml에 <Context path=”/search” docBase=”./search” /> 로 설정해뒀음. 여기서 path는 경로명, docBase는 war이름 !! )
+(tomcat의 server.xml에 < Context path=”/search” docBase=”./search” / > 로 설정해뒀음. 여기서 path는 경로명, docBase는 war이름 !! )
 11. ls 로 이름이 잘 변경되었는지 확인.
 12. 톰캣에 bin폴더로 이동 : cd /usr/local/apache-tomcat-8.5.76/bin/
 13. 톰캣 구동시키기 : ./startup.sh (* 톰캣 종료 : ./shutdown.sh)
@@ -21,7 +21,7 @@ ERROR LOG_1. EC2 서버배포
 15. 아래와 같은 화면 표시 😨
     <img src="./image/1_1.png">
 
->## 2. 우선 에러로그를 확인해보자
+>## 2. 에러로그를 확인해보자
 1. apache-tomcat-8.5.76/logs/ 에 있는 catalina.out 조회
     ```
     - catalina.out : 서버상에서 발생한 모든 내용(서버의 기동,정지,개시 등)을 기록한 파일이다.
@@ -55,7 +55,7 @@ ERROR LOG_1. EC2 서버배포
 <img src="./image/1_5.png">
 spring프로젝트는 프로젝트별 내장톰캣이 존재하는 spring boot와 달리 외부톰캣을 이용하여 실행된다.
 
-그래서 spring boot 프로젝트에서는 각 프로젝트 연동시 프로젝트 간 관계를 설정해주면 되었다 (ex.부모-자식)
+그래서 spring boot 프로젝트에서는 각 프로젝트 연동시 프로젝트 간 관계를 설정해주면 되었다 (ex.부모-자식)  
 
 그러나 spring 프로젝트에서는 함께 실행되어야 할 모든 프로젝트를 톰캣의 server.xml에다 명시해주고, 특정 디렉토리(나의 경우, /usr/local/apache-tomcat-8.5.76/webapps/ ) 에 관련 war파일을 모두 올려두어야 한다.
 
