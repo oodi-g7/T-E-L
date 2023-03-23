@@ -9,10 +9,10 @@ ep2. Mybatis에서 foreach사용하기 및 쿼리로그출력
     <image src="./image/2_1.png" style="margin:20px;">
 
     (1) <U>시작시간 20:00 ~ 종료시간 22:00 일 경우</U>   
-    → 20:00~21:00, 21:00~22:00 이렇게 영상 2개가 조회되어야하고,
+    → 20:00 ~ 21:00, 21:00 ~ 22:00 이렇게 영상 2개가 조회되어야하고,
 
     (2) <U>시작시간 20:00 ~ 종료시간 22:30 일 경우</U>   
-    → 20:00~21:00, 21:00~22:00, 22:00~23:00 이렇게 영상 3개가 조회되어야 한다.
+    → 20:00 ~ 21:00, 21:00 ~ 22:00, 22:00 ~ 23:00 이렇게 영상 3개가 조회되어야 한다.
 
 <br>
 
@@ -26,8 +26,6 @@ ep2. Mybatis에서 foreach사용하기 및 쿼리로그출력
 
 **case 1. 종료시간이 hh:00인 경우**   
 → 종료시간이 hh:00 인 경우에는 시작시간~종료시간 사이 영상을 조회하면 된다.
-
-<br>
 
 **case 2. 종료시간이 hh:mm인 경우**   
 → 종료시간이 hh:mm 인 경우에는 시작시간~(종료시간+1) 사이 영상을 조회하면 된다.
@@ -60,10 +58,7 @@ for(int i=0; i<반복횟수; i++){
 <br>
 
 사용자가 시작시간 20:00 종료시간 22:00을 선택했을때 DB에서 조회해야할 영상은 20:00 ~ 20:59,  21:00 ~ 21:59 이렇게 2개이다.   
-
 → 시작시간이 20시, 21시인 영상 2개가 필요
-
-<br>
 
 시작시간 20:00 종료시간 22:30을 선택했을때는 
 22:00 ~ 22:59  영상 하나가 추가되어 3개이다.   
@@ -187,9 +182,7 @@ foreach태그 안에는 item으로 설정해둔 hour를 mybatis 문법에 맞게
 <br>
 
 (1) pom.xml에 dependency 추가
-
-<br>
-
+	
 ```
 <dependency>
   <groupId>org.bgee.log4jdbc-log4j2</groupId>
@@ -206,8 +199,6 @@ foreach태그 안에는 item으로 설정해둔 hour를 mybatis 문법에 맞게
 <br>
 
 (2) WEB-INF/spring/root-context.xml 수정
-
-<br>
 
 ```
 <!-- 기존-->
@@ -227,8 +218,6 @@ foreach태그 안에는 item으로 설정해둔 hour를 mybatis 문법에 맞게
 </bean>
 ```
 
-<br>
-
 기존 dataSource설정부분에서 driverClassName과 url을 위와같이 수정해준다.
 
 <br>
@@ -239,8 +228,6 @@ foreach태그 안에는 item으로 설정해둔 hour를 mybatis 문법에 맞게
 
 src/main/resources 밑에 log4jdbc.log4j2.properties 파일을 이름 그대로 생성해준다.
 
-<br>
-
 ```
 log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 log4jdbc.dump.sql.maxlinelength=0
@@ -250,16 +237,13 @@ log4jdbc.dump.sql.maxlinelength=0
 
 (4) 결과
 
-<br>
-
-- case 1.
-
-    <img src="./image/2_2.png">
-    <img src="./image/2_3.png">
+case 1.
+	<img src="./image/2_2.png">
+	<img src="./image/2_3.png">
 
 <br>
 
-- case 2.
+case 2.
 
     <img src="./image/2_4.png">
     <img src="./image/2_5.png">    
