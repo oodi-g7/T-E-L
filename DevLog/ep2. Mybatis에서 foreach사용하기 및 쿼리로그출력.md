@@ -223,9 +223,6 @@ foreach태그 안에는 item으로 설정해둔 hour를 mybatis 문법에 맞게
 <br>
 
 (3) log4jdbc.log4j2.properties 생성
-
-<br>
-
 src/main/resources 밑에 log4jdbc.log4j2.properties 파일을 이름 그대로 생성해준다.
 
 ```
@@ -238,15 +235,16 @@ log4jdbc.dump.sql.maxlinelength=0
 (4) 결과
 
 case 1.
+
 	<img src="./image/2_2.png">
 	<img src="./image/2_3.png">
 
 <br>
 
 case 2.
-
-    <img src="./image/2_4.png">
-    <img src="./image/2_5.png">    
+	
+	<img src="./image/2_4.png">
+	<img src="./image/2_5.png">    
 
 
 <br>
