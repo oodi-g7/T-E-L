@@ -236,15 +236,15 @@ log4jdbc.dump.sql.maxlinelength=0
 
 case 1.
 
-	<img src="./image/2_2.png">
-	<img src="./image/2_3.png">
+<img src="./image/2_2.png">
+<img src="./image/2_3.png">
 
 <br>
 
 case 2.
 	
-	<img src="./image/2_4.png">
-	<img src="./image/2_5.png">    
+<img src="./image/2_4.png">
+<img src="./image/2_5.png">    
 
 
 <br>
