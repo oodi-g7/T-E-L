@@ -6,12 +6,12 @@ Apache Tiles 사용
 - 중복된 코드를 제거하기 위해 Apache에서 제공하는 오픈소스
 - runtime시에 page조각들을 구성해서 하나의 완성된 페이지를 출력
     <center>
-        <img src="./image/01_1.png">
+        <img src="./image/3_1.png">
     </center>
 - page 1 과 page 2 는 서로 다르지만, 그 차이점은 본문인 Body에만 있다. Tiles를 이용하여 기본적인 레이아웃은 재사용하고 본문만 동적으로 변경할 수 있다.
 - 만약 layout변경 이슈 발생시, layout에 관계된 페이지의 내용만 변경하면 되는 장점이 있다.
     <center>
-        <img src="./image/01_2.png">
+        <img src="./image/3_2.png">
     </center>
 - 템플릿 생성 시 rendering할때 본문 body부분만 동적으로 주입되어 하나의 페이지가 출력됨.
 
@@ -56,10 +56,10 @@ Apache Tiles 사용
                 <tbody>
                     <tr>
                         <td>
-                            <img src="./image/01_3.png" style="width:200px; height:300px;">
+                            <img src="./image/3_3.png" style="width:200px; height:300px;">
                         </td>
                         <td>
-                            <img src="./image/01_4.png" style="width:200px; height:300px;">
+                            <img src="./image/3_4.png" style="width:200px; height:300px;">
                         </td>
                     </tr>
                 </tbody>
