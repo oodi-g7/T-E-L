@@ -1,4 +1,4 @@
-# SpringBoot Profile 설정하기
+# ep4. SpringBoot Profile 설정하기
 ## .properties
 - 자바 응용프로그램 내에서 사용되는 설정과 관련된 변수들을 파일에다 쓰고, 이를 읽어오는 방식에 사용됨.
     - 외부에서 파일을 넣을 수도 있고, 프로젝트 내부적으로 넣어서 사용할 수도 있음.
@@ -18,7 +18,7 @@
 - 실행환경에 따라 properties 파일내용을 일일이 수정하지 않기 위해선, 프로젝트 실행환경마다 각각의 properties 파일을 생성해주면 됨.
 - 실행환경에 따라 설정 변수 값이 다르게 적용되는 경우가 많은데, 이럴때 개발환경에 따라 각각의 프로퍼티를 사용하면 다르게 사용되는 값들을 하나하나 다 바꿔주는 번거로운 일을 하지 않을 수 있다.
 - 프로퍼티 사용
-    ```
+    ```properties
     # application-local.properties
 
     # api source
@@ -26,7 +26,7 @@
     api.auth.key=aaaa123
     api.master.idx=1
     ```
-    ```
+    ```properties
     # application-prod.properties
 
     # api source
@@ -34,7 +34,7 @@
     api.auth.key=bbbb123
     api.master.idx=2
     ```
-    ```
+    ```java
     // TestController
 
     @Controller

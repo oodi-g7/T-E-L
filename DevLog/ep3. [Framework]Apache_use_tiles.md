@@ -1,7 +1,6 @@
-Apache Tiles 사용
-=
+# ep3. Apache Tiles 사용
 
->## 1. Apache Tiles란
+## 1. Apache Tiles란
 - https://tiles.apache.org/
 - 중복된 코드를 제거하기 위해 Apache에서 제공하는 오픈소스
 - runtime시에 page조각들을 구성해서 하나의 완성된 페이지를 출력
@@ -17,9 +16,9 @@ Apache Tiles 사용
 
 
 
->## 2. Spring Legacy Project (Spring MVC Project) 에 Tiles 적용하기
+## 2. Spring Legacy Project (Spring MVC Project) 에 Tiles 적용하기
 - pom.xml에 추가
-    ```
+    ```xml
     <properties>
 		<org.apache.tiles-version>3.0.3</org.apache.tiles-version>
 	</properties>
@@ -69,7 +68,7 @@ Apache Tiles 사용
 - tiles-context.xml 작성
     - WEB-INF/spring/appServlet 밑에 tiles-context.xml 파일을 작성한다. 
     - 파일 위치는 정해진게 아니지만, 웹 설정 파일인 servlet-context.xml과 함께 있는것이 좋다고 판단되어서 appServlet폴더 밑에 만들었다.
-        ```
+        ```xml
         <?xml version="1.0" encoding="UTF-8"?>
         <!DOCTYPE tiles-definitions PUBLIC
             "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
@@ -94,7 +93,7 @@ Apache Tiles 사용
     - 위와 같이 레이아웃으로 사용할 jsp를 설정해주면 된다. 이때 put-attribute에 name속성은 정해진 것이 없고 사용자임의로 작성이 가능하다. 
     - body속성은 빈 값 그대로 두고 아래쪽에 layout definition을 확장한 difinition을 추가로 작성하여, body속성에 들어갈 페이지들의 경로를 입력해주면된다. 나는 views밑에 폴더를 하나 생성 하여 해당 폴더 밑에 jsp파일을 넣을 것이므로 {1}/{2}.jsp로 입력하였다.
     - 만약 여러 경로를 등록하고 싶으면 아래와 같이 definition을 추가하면 된다.
-        ```
+        ```xml
         <!-- url형식이 */* 인 경우 -->
         <definition name="*/*" extends="layout">
             <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
@@ -106,7 +105,7 @@ Apache Tiles 사용
         ```
 
 - servlet-context.xml 추가
-    ```
+    ```xml
     <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -139,7 +138,7 @@ Apache Tiles 사용
 - layout.jsp 작성
     - 모든 설정이 끝났으니 마지막으로 레이아웃을 잡아준다. 
     - tiles를 거치는 모든 페이지들은 전부 layout.jsp에서 body부분만 바뀌어가며 출력되다보니, 대부분의 페이지에서 사용할 link나 script등이 있다면 layout.jsp에다 추가해두는 것이 좋다.
-        ```
+        ```jsp
         <%@ page language="java" contentType="text/html; charset=UTF-8"
         pageEncoding="UTF-8"%>
         <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
@@ -165,7 +164,7 @@ Apache Tiles 사용
     - tiles의 taglib를 jsp 상단에 추가해주고, head태그의 title은 좀 전 tiles-context.xml에서 설정한 title값을 getAsString을 이용하여 추가해준다. tiles를 거치는 모든 페이지는 이제 동일한 title값을 갖게된다.
     - body태그에는 titles:insertAttribute 태그를 이용하여 tiles-context.xml에서 설정해둔 각각의 영역들을 추가한다. 이때 name은 tiles-context.xml에 있는 이름과 동일해야 한다.
     - 만약 같은 태그 내에 존재해야 하는 속성이 있다면 아래와 같이 html태그를 사용하여 함께 묶어줄 수도 있다.
-        ```
+        ```html
         <main class="main-content position-relative wrapper bg-gray-50">
             <tiles:insertAttribute name="topMenu"/>
             <tiles:insertAttribute name="body"/>
