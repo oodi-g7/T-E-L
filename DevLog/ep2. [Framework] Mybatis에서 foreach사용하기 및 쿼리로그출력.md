@@ -1,11 +1,11 @@
-# ep2. Mybatis에서 foreach사용하기 및 쿼리로그출력
+# ep2. [Framework] Mybatis에서 foreach사용하기 및 쿼리로그출력
 
 ## 1. 상황
 - Spring + MyBatis 프로젝트
 - 사용자가 DB에 저장된 영상을 조회하고자 하는데, 영상은 1시간 단위로 저장이 되어있다.
 - 아래와 같이 영상의 시작시간, 종료시간을 입력할 수 있을때   
 
-    <image src="./image/2_1.png" style="margin:20px;">
+    <img src="../image/2_1.png" style="margin:20px;">
 
     - (1) <U>시작시간 20:00 ~ 종료시간 22:00 일 경우</U>   
     → 20:00 ~ 21:00, 21:00 ~ 22:00 이렇게 영상 2개가 조회되어야하고,
@@ -164,15 +164,15 @@ SELECT * FROM VIDEO
 - (4) 결과
 	- case 1.
 
-		<img src="./image/2_2.png">
+		<img src="../image/2_2.png">
 
-		<img src="./image/2_3.png">
+		<img src="../image/2_3.png">
 
 	- case 2.
 
-		<img src="./image/2_4.png">
+		<img src="../image/2_4.png">
 
-		<img src="./image/2_5.png">    
+		<img src="../image/2_5.png">    
 
 ## 4. 덧붙이며
 - mybatis를 오랜만에 사용하다보니 기억이 가물가물하다.

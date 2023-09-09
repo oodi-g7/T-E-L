@@ -1,4 +1,4 @@
-# ep1. EC2 서버배포
+# ep1. [Spring] EC2 서버배포
 
 ## 1. 상황
 1. 퍼블리싱이 끝난 후, .jsp가 추가된 spring 프로젝트를 생성해둔 EC2웹 서버에다 올려 배포해보려고 한다.
@@ -18,7 +18,7 @@
 13. 톰캣 구동시키기 : ./startup.sh (* 톰캣 종료 : ./shutdown.sh)
 14. 아래와 같은 화면 표시 😨
 
-    <img src="./image/1_1.png">
+    <img src="../image/1_1.png">
 
 ## 2. 에러로그를 확인해보자
 1. apache-tomcat-8.5.76/logs/ 에 있는 catalina.out 조회
@@ -32,20 +32,20 @@
     - localhost.log : host(특정 가상호스트 대상)한정 로그
     [출처] https://anggeum.tistory.com/11
    
-    <img src="./image/1_2.png">
+    <img src="../image/1_2.png">
     
     - webapps 밑에 main이 없다는 에러가 떴다.
     - 현재 개발하는 솔루션은 main.war에서 로그인을 실행한 뒤 각각의 하위 서비스로 들어가는 플로우이므로, main.war 없이 서비스 모듈 하나만 배포하여 생긴 문제였다.
     - 우선 server.xml에서 메인프로젝트와 서비스 모듈 경로를 확인해줬다.
     
-    <img src="./image/1_3.png">
+    <img src="../image/1_3.png">
     
     - ( 여기서 path는 각 모듈의 경로이고(중복불가), docBasc는 war의 이름이다. )
     - 그런 후 webapps밑에 main.war와 search.war를 올려두었다.
     - 다시 실행시켜보니, main.war의 로그인 화면이 정상적으로 작동되었다 !
 
 ## 3. SpringBoot vs Spring
-<img src="./image/1_5.png">
+<img src="../image/1_5.png">
 
 - spring프로젝트는 프로젝트별 내장톰캣이 존재하는 spring boot와 달리 외부톰캣을 이용하여 실행된다.
 - 그래서 spring boot 프로젝트에서는 각 프로젝트 연동시 프로젝트 간 관계를 설정해주면 되었다 (ex.부모-자식)  

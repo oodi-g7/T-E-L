@@ -1,4 +1,4 @@
-# ep4. SpringBoot Profile 설정하기
+# ep4. [SpringBoot] SpringBoot Profile 설정하기
 ## .properties
 - 자바 응용프로그램 내에서 사용되는 설정과 관련된 변수들을 파일에다 쓰고, 이를 읽어오는 방식에 사용됨.
     - 외부에서 파일을 넣을 수도 있고, 프로젝트 내부적으로 넣어서 사용할 수도 있음.
@@ -51,15 +51,15 @@
 ### **Eclipse 에서**
 - 실행환경에 따른 여러개의 .properties파일을 생성해준다.
 
-    <img src="./image/4-1.png">
+    <img src="../image/4-1.png">
 
 - 실행하고자하는 프로젝트 → 우클릭 → Run As → Run Configurations... 클릭
     
-    <img src="./image/4-2.png">
+    <img src="../image/4-2.png">
 
 - SpringBoot탭에 profile항목에서 생성해둔 properties파일 목록을 확인할 수 있으며, 실행하려는 환경에 맞는 설정파일을 선택해주면 된다.
     
-    <img src="./image/4-3.png">
+    <img src="../image/4-3.png">
 
 ### **터미널 에서**
 - **java -jar (어플리케이션 파일명).jar**
