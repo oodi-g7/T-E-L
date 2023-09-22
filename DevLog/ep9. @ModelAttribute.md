@@ -1,4 +1,4 @@
-# ep9. @ModelAttribute 이용 다중 조건 검색 구현하기
+# ep9. [Spring] @ModelAttribute 이용 다중 조건 검색 구현하기
 ```java
 @Getter
 @Setter
