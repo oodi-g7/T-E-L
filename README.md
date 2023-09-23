@@ -12,3 +12,4 @@
 - [ep8. [Javascript] Ajax Map 넘기기](./DevLog/ep8.%20Ajax%20Map%20넘기기.md)
 - [ep9. [Spring] @ModelAttribute 이용 다중 조건 검색 구현하기](./DevLog/ep9.%20@ModelAttribute.md)
 - [ep10. [SpringBoot + Mybatis + PageHelper] 페이징 기능 구현하기](./DevLog/ep10.%20PageHelper이용%20페이징%20기능%20구현하기.md)
+- [ep11. [SpringSecurity] 중복 로그인 막기](./DevLog/ep11.%20Spring%20Security%20중복%20로그인%20막기.md)
